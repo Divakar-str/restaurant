@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Restaurant Name</title>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/home.css">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <link rel="stylesheet" type="text/css" href="css/gallery.css">
+  <link rel="stylesheet" type="text/css" href="css/about.css">
+  <link rel="stylesheet" type="text/css" href="css/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <h1 class="restaurant-name">Restaurant Name</h1>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#" onclick="toggleSection('home')">Home</a></li>
+        <li><a href="#" onclick="toggleSection('menu')">Menu</a></li>
+        <li><a href="#" onclick="toggleSection('gallery')">Gallery</a></li>
+        <li><a href="#" onclick="toggleSection('about')">About Us</a></li>
+        <li><a href="#" onclick="toggleSection('contact')">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+
+  <section id="home" class="active">
+    <h1>Welcome to Restaurant Name</h1>
+    <p>At Restaurant Name, we are committed to providing our customers with the best dining experience possible. Our
+      menu features a variety of delicious dishes made from fresh, locally sourced ingredients, and our friendly staff
+      is always ready to assist you.</p>
+    <p>Whether you're looking for a romantic dinner for two, a family gathering, or a group event, we have the perfect
+      ambiance and menu to suit your needs. Check out our menu and make a reservation today!</p>
+    <img src="images/home-image.jpg" alt="Restaurant Name" />
+  </section>
+
+  <section id="menu">
+
+    <div class="category-container">
+      <div class="category-button" data-category="all">All</div>
+    </div>
+    <div id="menu-container"></div>
+
+  </section>
+
+  <section id="gallery">
+    <!-- Example HTML for a gallery image -->
+    <img src="path/to/image.jpg" alt="Image description">
+    <!-- Example HTML for organizing images into categories -->
+    <div class="gallery-category" id="category1">
+      <h2>Category 1</h2>
+      <div class="gallery-images">
+        <img src="path/to/image1.jpg" alt="Image 1 description">
+        <img src="path/to/image2.jpg" alt="Image 2 description">
+        <img src="path/to/image3.jpg" alt="Image 3 description">
+      </div>
+    </div>
+    <div class="gallery-category" id="category2">
+      <h2>Category 2</h2>
+      <div class="gallery-images">
+        <img src="path/to/image4.jpg" alt="Image 4 description">
+        <img src="path/to/image5.jpg" alt="Image 5 description">
+        <img src="path/to/image6.jpg" alt="Image 6 description">
+      </div>
+    </div>
+    <!-- Example HTML for using a gallery plugin -->
+    <div class="gallery-images">
+      <a href="path/to/image1.jpg" data-fancybox="gallery">
+        <img src="path/to/image1-thumbnail.jpg" alt="Image 1 description">
+      </a>
+      <a href="path/to/image2.jpg" data-fancybox="gallery">
+        <img src="path/to/image2-thumbnail.jpg" alt="Image 2 description">
+      </a>
+      <a href="path/to/image3.jpg" data-fancybox="gallery">
+        <img src="path/to/image3-thumbnail.jpg" alt="Image 3 description">
+      </a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to Restaurant Name, a family-owned and operated restaurant that has been serving delicious cuisine since
+      20xx. Our mission is to provide our guests with an unforgettable dining experience that is both delicious and
+      memorable.</p>
+    <p>Our restaurant features seasonal and locally-sourced ingredients, and our menu is crafted with care by our
+      talented team of chefs. We offer a wide range of dishes, from classic favorites to unique creations that are sure
+      to tantalize your taste buds.</p>
+    <p>At Restaurant Name, we believe in creating a warm and welcoming atmosphere where everyone can feel at home. Our
+      team is dedicated to providing exceptional service and making every guest feel like part of our family. We are
+      committed to sustainability and reducing our environmental impact, and we work closely with local farmers and
+      suppliers to ensure that our ingredients are fresh and ethically sourced.</p>
+    <p>Thank you for choosing Restaurant Name. We look forward to serving you soon!</p>
+  </section>
+
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <p><i class="fa fa-map-marker"></i>123 Main Street<br>City, State Zip Code</p>
+        <p><i class="fa fa-phone"></i>(123) 456-7890</p>
+        <p><i class="fa fa-envelope"></i><a href="mailto:info@restaurantname.com">info@restaurantname.com</a></p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2085.7389535076154!2d77.87833151771635!3d11.450435857381047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9612a0226a88f%3A0x1b3ea1d2b42c281c!2sMuniyappan%20kovil!5e0!3m2!1sen!2sin!4v1689316141972!5m2!1sen!2sin"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="contact-form">
+        <h3>Send us a message</h3>
+        <form action="submit-form.php" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  
+
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, mi vel faucibus dictum, justo lorem
+          tempor metus, sed pretium tortor quam ut velit.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>123 Main Street<br>Anytown, USA 12345<br>Phone: (123) 456-7890<br>Email: info@restaurant.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul class="social-links">
+
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="copy">
+      <p>&copy; 2023 Restaurant Name. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+
+</html>

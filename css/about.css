@@ -1,0 +1,18 @@
+
+
+  #about {
+    padding: 20px;
+    background-color: var(--neutral-color-1);
+  }
+  
+  #about h2 {
+    color: var(--primary-color);
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  #about p {
+    color: var(--neutral-color-2);
+    font-size: 18px;
+    line-height: 1.5;
+  }

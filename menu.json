@@ -1,0 +1,299 @@
+{
+    "categories": [
+      {
+        "name": "Appetizers",
+        "dishes": [
+          {
+            "name": "Dragon Paneer",
+            "type": "Vegetarian",
+            "price": 110,
+            "image": ""
+          },
+          {
+            "name": "Panoor Tikka",
+            "type": "Vegetarian",
+            "price": 100,
+            "image": "panoor_tikka.jpg"
+          },
+          {
+            "name": "Banyan Tikka",
+            "type": "Non-Vegetarian",
+            "price": 140,
+            "image": "banyan_tikka.jpg"
+          },
+          {
+            "name": "Chicken-Mika",
+            "type": "Non-Vegetarian",
+            "price": 120,
+            "image": "chicken_mika.jpg"
+          },
+          {
+            "name": "Egg Fry",
+            "type": "Non-Vegetarian",
+            "price": 90,
+            "image": "egg_fry.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Main Course Vegetarian",
+        "dishes": [
+          {
+            "name": "Chhena Paneer Dry",
+            "type": "Vegetarian",
+            "price": 100,
+            "image": "chhena_paneer_dry.jpg"
+          },
+          {
+            "name": "Mutter Paneer",
+            "type": "Vegetarian",
+            "price": 100,
+            "image": "mutter_paneer.jpg"
+          },
+          {
+            "name": "Kadai Paneer",
+            "type": "Vegetarian",
+            "price": 110,
+            "image": "kadai_paneer.jpg"
+          },
+          {
+            "name": "Mushroom Masala",
+            "type": "Vegetarian",
+            "price": 100,
+            "image": "mushroom_masala.jpg"
+          },
+          {
+            "name": "Aloo Mutter",
+            "type": "Vegetarian",
+            "price": 80,
+            "image": "aloo_mutter.jpg"
+          },
+          {
+            "name": "Channa Masala",
+            "type": "Vegetarian",
+            "price": 70,
+            "image": "channa_masala.jpg"
+          },
+          {
+            "name": "Mixed Vegetables",
+            "type": "Vegetarian",
+            "price": 80,
+            "image": "mixed_vegetables.jpg"
+          },
+          {
+            "name": "Malai Kofta",
+            "type": "Vegetarian",
+            "price": 90,
+            "image": "malai_kofta.jpg"
+          },
+          {
+            "name": "Dal Fry",
+            "type": "Vegetarian",
+            "price": 70,
+            "image": "dal_fry.jpg"
+          },
+          {
+            "name": "Dal Tadka",
+            "type": "Vegetarian",
+            "price": 70,
+            "image": "dal_tadka.jpg"
+          },
+          {
+            "name": "Dal Makhani",
+            "type": "Vegetarian",
+            "price": 80,
+            "image": "dal_makhani.jpg"
+          },
+          {
+            "name": "Roti",
+            "type": "Vegetarian",
+            "price": 10,
+            "image": "roti.jpg"
+          },
+          {
+            "name": "Butter Roti",
+            "type": "Vegetarian",
+            "price": 12,
+            "image": "butter_roti.jpg"
+          },
+          {
+            "name": "Ghee Roti",
+            "type": "Vegetarian",
+            "price": 12,
+            "image": "ghee_roti.jpg"
+          },
+          {
+            "name": "Naan",
+            "type": "Vegetarian",
+            "price": 20,
+            "image": "naan.jpg"
+          },
+          {
+            "name": "Butter Naan",
+            "type": "Vegetarian",
+            "price": 25,
+            "image": "butter_naan.jpg"
+          },
+          {
+            "name": "Plain Kulcha",
+            "type": "Vegetarian",
+            "price": 25,
+            "image": "plain_kulcha.jpg"
+          },
+          {
+            "name": "Masala Kulcha",
+            "type": "Vegetarian",
+            "price": 30,
+            "image": "masala_kulcha.jpg"
+          },
+          {
+            "name": "Fancier Kulcha",
+            "type": "Vegetarian",
+            "price": 35,
+            "image": "fancier_kulcha.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Main Course Non-vegetarian",
+        "dishes": [
+          {
+            "name": "Chicken Lehman",
+            "type": "Non-Vegetarian",
+            "price": 120,
+            "image": "chicken_lehman.jpg"
+          },
+          {
+            "name": "Ginger Chicken",
+            "type": "Non-Vegetarian",
+            "price": 110,
+            "image": "ginger_chicken.jpg"
+          },
+          {
+            "name": "Garlic Chicken",
+            "type": "Non-Vegetarian",
+            "price": 120,
+            "image": "garlic_chicken.jpg"
+          },
+          {
+            "name": "Pepper Chicken",
+            "type": "Non-Vegetarian",
+            "price": 140,
+            "image": "pepper_chicken.jpg"
+          },
+          {
+            "name": "Butter Chicken",
+            "type": "Non-Vegetarian",
+            "price": 130,
+            "image": "butter_chicken.jpg"
+          },
+          {
+            "name": "Dragon Chicken",
+            "type": "Non-Vegetarian",
+            "price": 140,
+            "image": "dragon_chicken.jpg"
+          },
+          {
+            "name": "Banjara Chicken",
+            "type": "Non-Vegetarian",
+            "price": 120,
+            "image": "banjara_chicken.jpg"
+          },
+          {
+            "name": "Hyderabadi Chicken",
+            "type": "Non-Vegetarian",
+            "price": 130,
+            "image": "hyderabadi_chicken.jpg"
+          },
+          {
+            "name": "Mughalai Chicken",
+            "type": "Non-Vegetarian",
+            "price": 120,
+            "image": "mughalai_chicken.jpg"
+          },
+          {
+            "name": "Dhaba SPL",
+            "type": "Non-Vegetarian",
+            "price": 120,
+            "image": "dhaba_spl.jpg"
+          },
+          {
+            "name": "Chicken Fried Rice",
+            "type": "Non-Vegetarian",
+            "price": 130,
+            "image": "chicken_fried_rice.jpg"
+          },
+          {
+            "name": "Tikka Shawarma",
+            "type": "Non-Vegetarian",
+            "price": 140,
+            "image": "tikka_shawarma.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Rice and Biryani",
+        "dishes": [
+          {
+            "name": "Jeera Rice",
+            "type": "Vegetarian",
+            "price": 60,
+            "image": "jeera_rice.jpg"
+          },
+          {
+            "name": "Vag Fried Rice",
+            "type": "Vegetarian",
+            "price": 60,
+            "image": "veg_fried_rice.jpg"
+          },
+          {
+            "name": "Schezwan Fried Rice",
+            "type": "Vegetarian",
+            "price": 70,
+            "image": "schezwan_fried_rice.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Egg Dishes",
+        "dishes": [
+          {
+            "name": "Egg Rites",
+            "type": "Non-Vegetarian",
+            "price": 70,
+            "image": "egg_rites.jpg"
+          },
+          {
+            "name": "Chilli Egg",
+            "type": "Non-Vegetarian",
+            "price": 100,
+            "image": "chilli_egg.jpg"
+          },
+          {
+            "name": "Egg Fry",
+            "type": "Non-Vegetarian",
+            "price": 90,
+            "image": "egg_fry.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Specials",
+        "dishes": [
+          {
+            "name": "Chicken Shawarma",
+            "type": "Non-Vegetarian",
+            "price": 130,
+            "image": "chicken_shawarma.jpg"
+          },
+          {
+            "name": "Mexican Shawarma",
+            "type": "Non-Vegetarian",
+            "price": 120,
+            "image": "mexican_shawarma.jpg"
+          }
+        ]
+      }
+    ]
+  }
+  
