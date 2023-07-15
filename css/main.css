@@ -70,6 +70,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: var(--highlight-color);
+  color: var(--secondary-color);
 }
 
+
+section {
+  background-color: var(--neutral-color-1);
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
