@@ -130,36 +130,36 @@
       committed to sustainability and reducing our environmental impact, and we work closely with local farmers and
       suppliers to ensure that our ingredients are fresh and ethically sourced.</p>
     <p>Thank you for choosing Restaurant Name. We look forward to serving you soon!</p>
-
-
-    <div class="gallery-category" id="category4">
+  
+    <div class="review">
       <h2>Customer Ratings and Feedback</h2>
       <button onclick="openPopup()">Leave Your Feedback</button>
       <h3>Customer Reviews</h3>
       <ul id="feedbackList"></ul>
-      <div id="popup" class="popup">
-        <div class="popup-content">
-          <span class="close" onclick="closePopup()">&times;</span>
-          <h3>Leave Your Feedback</h3>
-          <div id="ratingStars" class="rating">
-            <span onclick="rate(5)"></span>
-            <span onclick="rate(4)"></span>
-            <span onclick="rate(3)"></span>
-            <span onclick="rate(2)"></span>
-            <span onclick="rate(1)"></span>
-          </div>
-          <form onsubmit="submitFeedback(event)">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
-            <label for="feedback">Feedback:</label>
-            <textarea id="feedback" placeholder="Enter your feedback" required></textarea>
-            <button type="submit">Submit</button>
-          </form>
+    </div>
+  
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h3>Leave Your Feedback</h3>
+        <div id="ratingStars" class="rating">
+          <span onclick="rate(5)">&#9733;</span>
+          <span onclick="rate(4)">&#9733;</span>
+          <span onclick="rate(3)">&#9733;</span>
+          <span onclick="rate(2)">&#9733;</span>
+          <span onclick="rate(1)">&#9733;</span>
         </div>
+        <form onsubmit="submitFeedback(event)">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required>
+          <label for="feedback">Feedback:</label>
+          <textarea id="feedback" placeholder="Enter your feedback" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
       </div>
     </div>
   </section>
-
+  
 
   <section id="contact">
     <h2>Contact Us</h2>
@@ -214,6 +214,8 @@
   <script src="js/menu.js"></script>
   <script src="js/gallery.js"></script>
   <script src="js/about.js"></script>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
 </body>
 
 </html>

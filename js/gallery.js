@@ -51,18 +51,17 @@ function setupSlideshow(categoryId) {
   }
 
   // Auto scroll every 3 seconds
-  const slideshowInterval = setInterval(scrollToNextSlide, 3000);
+let slideshowInterval = setInterval(scrollToNextSlide, 3000);
 
-  // Pause auto-scrolling when mouse enters the gallery container
-  slideshow.addEventListener('mouseenter', () => {
-    clearInterval(slideshowInterval);
-  });
+// Pause auto-scrolling when mouse enters the gallery container
+slideshow.addEventListener('mouseenter', () => {
+  clearInterval(slideshowInterval);
+});
 
-  // Resume auto-scrolling when mouse leaves the gallery container
-  slideshow.addEventListener('mouseleave', () => {
-    slideshowInterval = setInterval(scrollToNextSlide, 3000);
-  });
-
+// Resume auto-scrolling when mouse leaves the gallery container
+slideshow.addEventListener('mouseleave', () => {
+  slideshowInterval = setInterval(scrollToNextSlide, 3000);
+});
   return { scrollToNextSlide,nextSlide, prevSlide };
 }
 

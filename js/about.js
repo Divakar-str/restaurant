@@ -33,6 +33,11 @@ function closePopup() {
 function resetForm() {
   document.getElementById("name").value = "";
   document.getElementById("feedback").value = "";
+  selectedRating = 0;
+  const ratingStars = document.querySelectorAll("#ratingStars span");
+  ratingStars.forEach((star) => {
+    star.classList.remove("selected");
+  });
 }
 
 // Function to submit feedback
@@ -46,12 +51,16 @@ function submitFeedback(event) {
       name: name,
       feedback: feedback,
       rating: selectedRating,
+      timestamp: new Date().toLocaleString() // Add timestamp
     };
     feedbackData.push(feedbackObj);
     displayFeedback();
     closePopup();
   }
 }
+
+// Function to save feedback data to Excel file
+
 
 // Function to display feedback
 function displayFeedback() {
@@ -60,14 +69,17 @@ function displayFeedback() {
   feedbackData.forEach((feedback) => {
     const listItem = document.createElement("li");
     listItem.innerHTML = `
-      <img src="profile-photo.jpg" alt="Profile Photo">
+    <img src="https://shorturl.at/isxX8" alt="Profile Photo">
       <div>
-      <strong>${feedback.name}</strong><br>
+        <strong>${feedback.name}</strong><br>
         <span class="rating">${"★".repeat(feedback.rating)}</span>
-        
         <p>${feedback.feedback}</p>
+        <span class="timestamp">${feedback.timestamp}</span> <!-- Display timestamp -->
       </div>
     `;
     feedbackList.appendChild(listItem);
   });
 }
+
+// Initial display of feedback
+displayFeedback();
