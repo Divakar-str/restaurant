@@ -77,14 +77,12 @@ fetch('menu.json')
             });
             tile.appendChild(decreaseBtn);
 
-
             const quantitySelector = document.createElement('input');
             quantitySelector.type = 'number';
             quantitySelector.min = 1;
             quantitySelector.value = 1;
             tile.appendChild(quantitySelector);
 
-          
             const increaseBtn = document.createElement('button');
             increaseBtn.textContent = '+';
             increaseBtn.addEventListener('click', () => {
@@ -92,12 +90,8 @@ fetch('menu.json')
             });
             tile.appendChild(increaseBtn);
 
-
-
-
             const addToCartButton = document.createElement('button');
             addToCartButton.classList.add('atc-button');
-
             addToCartButton.textContent = 'Add to Cart';
             addToCartButton.addEventListener('click', () => {
               const quantity = parseInt(quantitySelector.value);
@@ -127,7 +121,6 @@ fetch('menu.json')
           quantity: quantity,
         };
         cart.push(cartItem);
-      
       }
 
       updateCartDisplay();
@@ -142,8 +135,8 @@ fetch('menu.json')
         updateCartDisplay();
       }
     }
-
-    // Function to update the cart display
+   
+   // Function to update the cart display
 function updateCartDisplay() {
   cartContent.innerHTML = '';
   let totalAmount = 0;
@@ -160,9 +153,30 @@ function updateCartDisplay() {
     const cartItemPrice = document.createElement('span');
     cartItemPrice.textContent = `₹${cartItem.price}`;
     cartItemDiv.appendChild(cartItemPrice);
+
+    const quantityContainer = document.createElement('span'); // New span container for quantity and buttons
+    const decreaseBtn = document.createElement('button');
+    decreaseBtn.textContent = '-';
+    decreaseBtn.classList.add('quantity-button'); // Add class to "-" button
+    decreaseBtn.addEventListener('click', () => {
+      decreaseCartItemQuantity(cartItem.id);
+    });
+    quantityContainer.appendChild(decreaseBtn);
+
     const cartItemQuantity = document.createElement('span');
     cartItemQuantity.textContent = cartItem.quantity;
-    cartItemDiv.appendChild(cartItemQuantity);
+    quantityContainer.appendChild(cartItemQuantity);
+
+    const increaseBtn = document.createElement('button');
+    increaseBtn.textContent = '+';
+    increaseBtn.classList.add('quantity-button'); // Add class to "+" button
+    increaseBtn.addEventListener('click', () => {
+      increaseCartItemQuantity(cartItem.id);
+    });
+    quantityContainer.appendChild(increaseBtn);
+
+    cartItemDiv.appendChild(quantityContainer);
+
     const cartItemTotalPrice = document.createElement('span');
     const itemTotal = cartItem.price * cartItem.quantity;
     cartItemTotalPrice.textContent = `₹${itemTotal}`;
@@ -170,10 +184,12 @@ function updateCartDisplay() {
     totalAmount += itemTotal;
 
     const removeButton = document.createElement('button');
-    removeButton.textContent = 'X';
+    removeButton.classList.add('remove-button');
+    removeButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
     removeButton.addEventListener('click', () => {
       removeFromCart(cartItem.id);
     });
+    
     cartItemDiv.appendChild(removeButton);
 
     cartContent.appendChild(cartItemDiv);
@@ -182,19 +198,39 @@ function updateCartDisplay() {
   cartTotal.textContent = `Total Amount: ₹${totalAmount}`;
 }
 
+
+
+// Function to decrease the quantity of a cart item
+function decreaseCartItemQuantity(itemId) {
+  const cartItem = cart.find(item => item.id === itemId);
+  if (cartItem && cartItem.quantity > 1) {
+    cartItem.quantity--;
+    updateCartDisplay();
+  }
+}
+
+// Function to increase the quantity of a cart item
+function increaseCartItemQuantity(itemId) {
+  const cartItem = cart.find(item => item.id === itemId);
+  if (cartItem) {
+    cartItem.quantity++;
+    updateCartDisplay();
+  }
+}
+
+
   })
   .catch(error => {
     console.log('An error occurred while fetching the menu data:', error);
   });
 
-  function toggleCartPopup() {
-    const cartPopup = document.getElementById('cartPopup');
-    cartPopup.classList.toggle('open');
-  }
-  
+// Function to toggle the cart popup
+function toggleCartPopup() {
+  const cartPopup = document.getElementById('cartPopup');
+  cartPopup.classList.toggle('open');
+}
 
-
-  // Function to decrease the quantity
+// Function to decrease the quantity
 function decreaseQuantity(input) {
   let value = parseInt(input.value);
   if (value > 1) {

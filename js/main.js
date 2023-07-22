@@ -11,3 +11,22 @@ function toggleSection(sectionId) {
   const selectedSection = document.getElementById(sectionId);
   selectedSection.classList.add('active');
 }
+
+
+const navLinks = document.querySelectorAll('nav ul li a');
+
+// Add event listener to each anchor element
+navLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default anchor behavior (scrolling)
+
+    // Remove "active" class from all anchor elements
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    // Add "active" class to the clicked anchor element
+    link.classList.add('active');
+
+    // Perform any additional actions when the link is clicked (e.g., scroll to the section)
+    // ...
+  });
+});
