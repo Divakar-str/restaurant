@@ -70,13 +70,34 @@ fetch('menu.json')
             dishPrice.textContent = 'Price: ₹' + dish.price;
             tile.appendChild(dishPrice);
 
+            const decreaseBtn = document.createElement('button');
+            decreaseBtn.textContent = '-';
+            decreaseBtn.addEventListener('click', () => {
+              decreaseQuantity(quantitySelector);
+            });
+            tile.appendChild(decreaseBtn);
+
+
             const quantitySelector = document.createElement('input');
             quantitySelector.type = 'number';
             quantitySelector.min = 1;
             quantitySelector.value = 1;
             tile.appendChild(quantitySelector);
 
+          
+            const increaseBtn = document.createElement('button');
+            increaseBtn.textContent = '+';
+            increaseBtn.addEventListener('click', () => {
+              increaseQuantity(quantitySelector);
+            });
+            tile.appendChild(increaseBtn);
+
+
+
+
             const addToCartButton = document.createElement('button');
+            addToCartButton.classList.add('atc-button');
+
             addToCartButton.textContent = 'Add to Cart';
             addToCartButton.addEventListener('click', () => {
               const quantity = parseInt(quantitySelector.value);
@@ -106,6 +127,7 @@ fetch('menu.json')
           quantity: quantity,
         };
         cart.push(cartItem);
+      
       }
 
       updateCartDisplay();
@@ -170,3 +192,18 @@ function updateCartDisplay() {
     cartPopup.classList.toggle('open');
   }
   
+
+
+  // Function to decrease the quantity
+function decreaseQuantity(input) {
+  let value = parseInt(input.value);
+  if (value > 1) {
+    input.value = value - 1;
+  }
+}
+
+// Function to increase the quantity
+function increaseQuantity(input) {
+  let value = parseInt(input.value);
+  input.value = value + 1;
+}
