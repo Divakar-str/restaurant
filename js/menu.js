@@ -207,3 +207,4 @@ function increaseQuantity(input) {
   let value = parseInt(input.value);
   input.value = value + 1;
 }
+
