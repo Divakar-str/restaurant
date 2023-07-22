@@ -40,12 +40,43 @@
   </section>
 
   <section id="menu">
+    <div class="cart-popup-trigger" onclick="toggleCartPopup()">View Cart</div><br>
 
-    <div class="category-container">
-      <div class="category-button" data-category="all">All</div>
-    </div>
-    <div id="menu-container"></div>
+      <div class="category-container">
+        <!-- Category buttons will be added dynamically -->
+      </div>
+      <div id="menu-container"></div>
+<!-- Cart popup trigger -->
 
+
+<!-- Cart popup -->
+<div class="cart-popup" id="cartPopup">
+  <div class="cart-popup-content">
+    <div class="cart-popup-close" onclick="toggleCartPopup()">&times;</div>
+    <aside id="cart" class="cart">
+      <h2>Your Cart</h2>
+      <div class="cart-header">
+        <span>S.No</span>
+        <span>Dish Name</span>
+        <span>Price</span>
+        <span>Quantity</span>
+        <span>Total Price</span>
+        <span></span>
+      </div>
+      <div id="cart-content">
+        <!-- Cart items will be displayed here -->
+      </div>
+      <div id="cart-total">
+        <!-- Total amount will be displayed here -->
+      </div>
+    </aside>
+  </div>
+</div>
+
+
+
+
+     
   </section>
 
   <section id="gallery">
