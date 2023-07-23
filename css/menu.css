@@ -38,8 +38,8 @@ body {
 
 .tile-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr auto;
+  gap: 15px;
 }
 
 .tile {
@@ -51,6 +51,7 @@ body {
   max-width: 400px;
   height: auto;
   padding: 15px;
+  position: relative;
 }
 
 .tile img {
@@ -92,6 +93,7 @@ body {
   border-radius: 5px;
   text-align: center;
   margin-bottom: 10px;
+  appearance: textfield;
 }
 
 .tile button {
@@ -112,6 +114,31 @@ body {
 .tile  .atc-button {
   display: block;
   margin: 0 auto; 
+}
+
+.non-veg-symbol, .veg-symbol {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+/* Additional styles for the veg symbol */
+.veg-symbol {
+  border-color: #4CAF50;
+  color: #4CAF50;
+}
+
+/* Additional styles for the non-veg symbol */
+.non-veg-symbol {
+  border-color: #FF0000;
+  color: #FF0000;
 }
 
 

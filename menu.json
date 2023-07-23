@@ -8,21 +8,21 @@
           "name": "Dragon Paneer",
           "type": "Vegetarian",
           "price": 110,
-          "image": ""
+          "image": "https://relishdelish.ca/wp-content/uploads/2019/05/Screen-Shot-2020-07-11-at-4.45.05-PM-800x650.png"
         },
         {
           "id": 2,
           "name": "Panoor Tikka",
           "type": "Vegetarian",
           "price": 100,
-          "image": "panoor_tikka.jpg"
+          "image": "https://relishdelish.ca/wp-content/uploads/2019/05/Screen-Shot-2020-07-11-at-4.45.05-PM-800x650.png"
         },
         {
           "id": 3,
           "name": "Banyan Tikka",
           "type": "Non-Vegetarian",
           "price": 140,
-          "image": "banyan_tikka.jpg"
+          "image": "https://relishdelish.ca/wp-content/uploads/2019/05/Screen-Shot-2020-07-11-at-4.45.05-PM-800x650.png"
         },
         {
           "id": 4,
@@ -48,7 +48,7 @@
           "name": "Chhena Paneer Dry",
           "type": "Vegetarian",
           "price": 100,
-          "image": "chhena_paneer_dry.jpg"
+          "image": "https://relishdelish.ca/wp-content/uploads/2019/05/Screen-Shot-2020-07-11-at-4.45.05-PM-800x650.png"
         },
         {
           "id": 7,

@@ -62,6 +62,19 @@ fetch('menu.json')
             dishImage.alt = dish.name;
             tile.appendChild(dishImage);
 
+            const dishtype = document.createElement('div');
+            dishtype.textContent = ".";
+            if (dish.type === "Vegetarian") {
+              dishtype.classList.add('veg-symbol');
+              dishtype.innerHTML = '<i class="fas fa-carrot"></i>';
+            }
+            else {
+              dishtype.classList.add('non-veg-symbol');
+              dishtype.innerHTML = ' <i class="fas fa-drumstick-bite"></i>';
+            }
+            tile.appendChild(dishtype);
+      
+
             const dishName = document.createElement('h3');
             dishName.textContent = dish.name;
             tile.appendChild(dishName);
