@@ -24,8 +24,6 @@ body {
   padding: 20px;
 }
 
-
-
 header {
   display: flex;
   align-items: center;
@@ -39,10 +37,8 @@ header {
 .restaurant-name {
   font-size: 45px;
   font-weight: bold;
-  margin-right: 20px;
+  text-align: left;
   color: var(--primary-color);
-
-
 }
 
 nav {

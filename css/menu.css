@@ -38,9 +38,11 @@ body {
 
 .tile-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr auto;
-  gap: 15px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  padding: 10px;
 }
+
 
 .tile {
   background-color: #fff;
@@ -48,15 +50,23 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
-  max-width: 400px;
   height: auto;
   padding: 15px;
+  min-width: 280px;
+  max-width: 280px ;
   position: relative;
+  transition: box-shadow 0.3s ease; 
+}
+
+.tile:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px); /* Optional: Add a slight vertical shift on hover */
 }
 
 .tile img {
   max-width: 100%;
   border: none;
+  margin-top: 20px;
   min-height: 200px;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -118,8 +128,8 @@ body {
 
 .non-veg-symbol, .veg-symbol {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 3px;
+  right: 2px;
   width: 30px;
   height: 30px;
   text-align: center;
@@ -373,3 +383,32 @@ aside#cart {
   background-color: #ff9800;
 }
 
+
+
+/* Media query for screen sizes smaller than 768px */
+@media screen and (max-width: 767px) {
+  .tile-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media query for screen sizes between 768px and 1023px */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .tile-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Media query for screen sizes between 1024px and 1279px */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .tile-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Media query for screen sizes larger than 1280px */
+@media screen and (min-width: 1280px) {
+  .tile-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

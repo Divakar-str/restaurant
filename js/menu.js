@@ -7,6 +7,7 @@ fetch('menu.json')
     const categoryContainer = document.querySelector('.category-container');
     const cartContent = document.getElementById('cart-content');
     const cartTotal = document.getElementById('cart-total');
+    const placeOrderButton = document.querySelector('.place-order-button');
     const cart = [];
 
     // Create category buttons
@@ -73,7 +74,7 @@ fetch('menu.json')
               dishtype.innerHTML = ' <i class="fas fa-drumstick-bite"></i>';
             }
             tile.appendChild(dishtype);
-      
+
 
             const dishName = document.createElement('h3');
             dishName.textContent = dish.name;
@@ -148,89 +149,130 @@ fetch('menu.json')
         updateCartDisplay();
       }
     }
-   
-   // Function to update the cart display
-function updateCartDisplay() {
-  cartContent.innerHTML = '';
-  let totalAmount = 0;
 
-  cart.forEach((cartItem, index) => {
-    const cartItemDiv = document.createElement('div');
-    cartItemDiv.classList.add('cart-item');
-    const cartItemSNo = document.createElement('span');
-    cartItemSNo.textContent = index + 1;
-    cartItemDiv.appendChild(cartItemSNo);
-    const cartItemName = document.createElement('span');
-    cartItemName.textContent = cartItem.name;
-    cartItemDiv.appendChild(cartItemName);
-    const cartItemPrice = document.createElement('span');
-    cartItemPrice.textContent = `₹${cartItem.price}`;
-    cartItemDiv.appendChild(cartItemPrice);
+    // Function to update the cart display
+    function updateCartDisplay() {
+      cartContent.innerHTML = '';
+      let totalAmount = 0;
 
-    const quantityContainer = document.createElement('span'); // New span container for quantity and buttons
-    const decreaseBtn = document.createElement('button');
-    decreaseBtn.textContent = '-';
-    decreaseBtn.classList.add('quantity-button'); // Add class to "-" button
-    decreaseBtn.addEventListener('click', () => {
-      decreaseCartItemQuantity(cartItem.id);
-    });
-    quantityContainer.appendChild(decreaseBtn);
+      cart.forEach((cartItem, index) => {
+        const cartItemDiv = document.createElement('div');
+        cartItemDiv.classList.add('cart-item');
+        const cartItemSNo = document.createElement('span');
+        cartItemSNo.textContent = index + 1;
+        cartItemDiv.appendChild(cartItemSNo);
+        const cartItemName = document.createElement('span');
+        cartItemName.textContent = cartItem.name;
+        cartItemDiv.appendChild(cartItemName);
+        const cartItemPrice = document.createElement('span');
+        cartItemPrice.textContent = `₹${cartItem.price}`;
+        cartItemDiv.appendChild(cartItemPrice);
 
-    const cartItemQuantity = document.createElement('span');
-    cartItemQuantity.textContent = cartItem.quantity;
-    quantityContainer.appendChild(cartItemQuantity);
+        const quantityContainer = document.createElement('span'); // New span container for quantity and buttons
+        const decreaseBtn = document.createElement('button');
+        decreaseBtn.textContent = '-';
+        decreaseBtn.classList.add('quantity-button'); // Add class to "-" button
+        decreaseBtn.addEventListener('click', () => {
+          decreaseCartItemQuantity(cartItem.id);
+        });
+        quantityContainer.appendChild(decreaseBtn);
 
-    const increaseBtn = document.createElement('button');
-    increaseBtn.textContent = '+';
-    increaseBtn.classList.add('quantity-button'); // Add class to "+" button
-    increaseBtn.addEventListener('click', () => {
-      increaseCartItemQuantity(cartItem.id);
-    });
-    quantityContainer.appendChild(increaseBtn);
+        const cartItemQuantity = document.createElement('span');
+        cartItemQuantity.textContent = cartItem.quantity;
+        quantityContainer.appendChild(cartItemQuantity);
 
-    cartItemDiv.appendChild(quantityContainer);
+        const increaseBtn = document.createElement('button');
+        increaseBtn.textContent = '+';
+        increaseBtn.classList.add('quantity-button'); // Add class to "+" button
+        increaseBtn.addEventListener('click', () => {
+          increaseCartItemQuantity(cartItem.id);
+        });
+        quantityContainer.appendChild(increaseBtn);
 
-    const cartItemTotalPrice = document.createElement('span');
-    const itemTotal = cartItem.price * cartItem.quantity;
-    cartItemTotalPrice.textContent = `₹${itemTotal}`;
-    cartItemDiv.appendChild(cartItemTotalPrice);
-    totalAmount += itemTotal;
+        cartItemDiv.appendChild(quantityContainer);
 
-    const removeButton = document.createElement('button');
-    removeButton.classList.add('remove-button');
-    removeButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
-    removeButton.addEventListener('click', () => {
-      removeFromCart(cartItem.id);
-    });
+        const cartItemTotalPrice = document.createElement('span');
+        const itemTotal = cartItem.price * cartItem.quantity;
+        cartItemTotalPrice.textContent = `₹${itemTotal}`;
+        cartItemDiv.appendChild(cartItemTotalPrice);
+        totalAmount += itemTotal;
+
+        const removeButton = document.createElement('button');
+        removeButton.classList.add('remove-button');
+        removeButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        removeButton.addEventListener('click', () => {
+          removeFromCart(cartItem.id);
+        });
+
+        cartItemDiv.appendChild(removeButton);
+
+        cartContent.appendChild(cartItemDiv);
+      });
+
+      cartTotal.textContent = `Total Amount: ₹${totalAmount}`;
+    }
+
+
+
+    // Function to decrease the quantity of a cart item
+    function decreaseCartItemQuantity(itemId) {
+      const cartItem = cart.find(item => item.id === itemId);
+      if (cartItem && cartItem.quantity > 1) {
+        cartItem.quantity--;
+        updateCartDisplay();
+      }
+    }
+
+    // Function to increase the quantity of a cart item
+    function increaseCartItemQuantity(itemId) {
+      const cartItem = cart.find(item => item.id === itemId);
+      if (cartItem) {
+        cartItem.quantity++;
+        updateCartDisplay();
+      }
+    }
+
     
-    cartItemDiv.appendChild(removeButton);
 
-    cartContent.appendChild(cartItemDiv);
-  });
+    placeOrderButton.addEventListener('click', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tableId = urlParams.get('id');
+      if (cart.length === 0) {
+        alert("Your cart is empty. Please add items before placing an order.");
+        return [];
+      }
+      // if (!tableId) {
+      //   alert("Table ID is missing from the URL.");
+      //   return;
+      // }
 
-  cartTotal.textContent = `Total Amount: ₹${totalAmount}`;
-}
 
+      // Create an array to store the order details
+      const orderDetails = [];
+      // Loop through the cart array to get each item and its quantity
+      cart.forEach(cartItem => {
+        const { name, price, quantity } = cartItem;
+        const totalAmount = price * quantity;
 
+        // Create an object representing each item in the order
+        const orderItem = {
+          name: name,
+          price: price,
+          quantity: quantity,
+          totalAmount: totalAmount,
+          tableId: tableId, // Add the table ID to the order item
+        };
 
-// Function to decrease the quantity of a cart item
-function decreaseCartItemQuantity(itemId) {
-  const cartItem = cart.find(item => item.id === itemId);
-  if (cartItem && cartItem.quantity > 1) {
-    cartItem.quantity--;
-    updateCartDisplay();
-  }
-}
+        // Add the order item to the order details array
+        orderDetails.push(orderItem);
+      });
+      console.log(orderDetails)
+      toggleCartPopup();
+      cart.splice(0);
+      updateCartDisplay();
+      alert("The order is successfully placed...");
 
-// Function to increase the quantity of a cart item
-function increaseCartItemQuantity(itemId) {
-  const cartItem = cart.find(item => item.id === itemId);
-  if (cartItem) {
-    cartItem.quantity++;
-    updateCartDisplay();
-  }
-}
-
+    });
 
   })
   .catch(error => {
@@ -256,4 +298,6 @@ function increaseQuantity(input) {
   let value = parseInt(input.value);
   input.value = value + 1;
 }
+
+
 
