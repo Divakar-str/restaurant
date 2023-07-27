@@ -33,12 +33,19 @@ header {
   color: #fff;
   font-size: 24px;
 }
+header img{
+  display:inline;
+
+ position: absolute;
+  
+}
 
 .restaurant-name {
   font-size: 45px;
   font-weight: bold;
   text-align: left;
   color: var(--primary-color);
+ margin-left: 80px;
 }
 
 nav {

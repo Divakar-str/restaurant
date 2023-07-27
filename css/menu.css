@@ -128,10 +128,10 @@ body {
 
 .non-veg-symbol, .veg-symbol {
   position: absolute;
-  top: 3px;
-  right: 2px;
-  width: 30px;
-  height: 30px;
+  top: 1px;
+  right: 1px;
+  width: 33px;
+  height: 33px;
   text-align: center;
   line-height: 30px;
   border: 2px solid #ccc;
@@ -141,16 +141,15 @@ body {
 
 /* Additional styles for the veg symbol */
 .veg-symbol {
-  border-color: #4CAF50;
-  color: #4CAF50;
+  border-color: green;
+  color: green;
 }
 
 /* Additional styles for the non-veg symbol */
 .non-veg-symbol {
-  border-color: #FF0000;
-  color: #FF0000;
+  border-color: red;
+  color: red;
 }
-
 
 /* Cart styles */
 aside#cart {
